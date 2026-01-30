@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import '../health_guard_tidy/health_guard_tidy_logic.dart';
 
 class HealthGuardRecipeWatch extends GetView<HealthGuardTidyLogic> {
+  const HealthGuardRecipeWatch({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class HealthGuardRecipeWatch extends GetView<HealthGuardTidyLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.ucso.value)),
+              url: WebUri.uri(Uri.parse(controller.codbtxvj.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

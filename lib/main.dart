@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:health_guard/pages/health_guard_recipe/health_guard_recipe_watch.dart';
+import 'package:health_guard/pages/health_guard_tidy/health_guard_tidy_binding.dart';
+import 'package:health_guard/pages/health_guard_tidy/health_guard_tidy_view.dart';
 import '../pages/health_guard_tab/health_guard_tab_view.dart';
 import '../pages/health_guard_tab/health_guard_tab_binding.dart';
 import '../pages/health_guard_home/health_guard_home_view.dart';
@@ -78,7 +81,7 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.transparent,
             ),
           ),
-          initialRoute: '/health_guard_tab',
+          initialRoute: '/',
           getPages: Guards,
         );
       },
@@ -86,6 +89,14 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Guards = [
+  GetPage(
+    name: '/',
+    page: () => const HealthGuardTidyView(),
+    binding: HealthGuardTidyBinding(),
+    transition: Transition.cupertino,
+    popGesture: true,
+    preventDuplicates: false,
+  ),
   GetPage(
     name: '/health_guard_tab',
     page: () => const HealthGuardTabPage(),
@@ -114,6 +125,13 @@ List<GetPage<dynamic>> Guards = [
     name: '/health_guard_recipe',
     page: () => const HealthGuardRecipePage(),
     binding: HealthGuardRecipeBinding(),
+    transition: Transition.cupertino,
+    popGesture: true,
+    preventDuplicates: false,
+  ),
+  GetPage(
+    name: '/health_guard_watch',
+    page: () => const HealthGuardRecipeWatch(),
     transition: Transition.cupertino,
     popGesture: true,
     preventDuplicates: false,

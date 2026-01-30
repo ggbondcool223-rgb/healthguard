@@ -11,7 +11,7 @@ class HealthGuardTidyView extends GetView<HealthGuardTidyLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.lvizxe.value
+          () => controller.vfwjskq.value
               ? const CircularProgressIndicator(color: Colors.blueAccent)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class HealthGuardTidyView extends GetView<HealthGuardTidyLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.dwuzj();
+              controller.octv();
             },
             icon: const Icon(
               Icons.restart_alt,
