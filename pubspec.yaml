@@ -1,0 +1,51 @@
+name: health_guard
+description: Health Guard App
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_timezone: ^3.0.0
+  flutter_screenutil: ^5.9.3
+  flutter_inappwebview: ^6.1.5
+  get: ^4.7.2
+  device_info_plus: ^10.1.0
+  styled_widget: ^0.4.1
+  sqflite: ^2.4.2
+  dio: ^5.4.3+1
+  path: ^1.9.1
+  intl: ^0.20.2
+  flutter_switch: ^0.3.2
+  fluttertoast: ^8.2.5
+  fl_chart: ^1.1.1
+  heart_bpm: ^2.0.0+0
+  package_info_plus: ^8.0.0
+  permission_handler: ^12.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.8
+  flutter_launcher_icons: ^0.13.1
+
+  # flutter pub run flutter_launcher_icons:main
+flutter_launcher_icons:
+  image_path: "assets/launcher.webp"
+  android: true
+  ios: true
+  web:
+    generate: true
+    image_path: "assets/launcher.webp"
+    background_color: "#FFFFFF"
+    theme_color: "#FFFFFF"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
