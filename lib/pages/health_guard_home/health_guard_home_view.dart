@@ -680,7 +680,7 @@ class HealthGuardHomePage extends GetView<HealthGuardHomeLogic> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Recent 7 Days Analysis',
+                    'Health Analysis',
                     style:
                         TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
                   ),

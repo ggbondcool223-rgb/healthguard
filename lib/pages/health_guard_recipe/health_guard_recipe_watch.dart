@@ -24,7 +24,7 @@ class HealthGuardRecipeWatch extends GetView<HealthGuardTidyLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.codbtxvj.value)),
+              url: WebUri.uri(Uri.parse(controller.kgqlp.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,
