@@ -13,7 +13,7 @@ class HealthGuardHomePage extends GetView<HealthGuardHomeLogic> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text('Heart Rate Check'),
+        title: const Text('Blood indicators'),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -34,7 +34,7 @@ class HealthGuardHomePage extends GetView<HealthGuardHomeLogic> {
                     child: Column(
                       children: [
                         _buildPersonalInfoCard(),
-                        _buildBanner(),
+                        // _buildBanner(),
                         _buildHealthMetrics(),
                         _buildCheckIn(),
                         _buildHealthKnowledge(),
